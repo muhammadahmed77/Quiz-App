@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="app">
+
+        <!-- Start Section -->
+        <div id="startCard">
+            <p class="start-eyebrow">Welcome to the</p>
+            <h1 class="start-title">Frontend Quiz</h1>
+            <p class="start-text">Test your HTML, CSS and JavaScript basics.</p>
+            <button class="btn btn-primary btn-lg" onclick="startQuiz()">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quiz" style="display: none;">
+            <h1>Frontend Quiz</h1>
+
+            <p id="progress"></p>
+
+            <h2 id="question"></h2>
+
+            <div class="options" role="group" aria-labelledby="question">
+                <button class="option" onclick="checkAnswer(0)" id="option0">Option 1</button>
+                <button class="option" onclick="checkAnswer(1)" id="option1">Option 2</button>
+                <button class="option" onclick="checkAnswer(2)" id="option2">Option 3</button>
+                <button class="option" onclick="checkAnswer(3)" id="option3">Option 4</button>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-primary" onclick="nextQuestion()" id="nextBtn">Next</button>
+            </div>
+
+            <p id="score"></p>
+        </div>
+
+        <div id="resultCard" style="display: none;">
+
+            <div id="passCard" style="display: none;">
+                <div id="confetti-container"></div>
+                <h2>🎉 Congratulations!</h2>
+                <p>You passed the quiz!</p>
+            </div>
+
+            <div id="failCard" style="display: none;">
+                <h2>Keep Learning! 💪</h2>
+                <p>Not quite there yet. Try again!</p>
+            </div>
+
+            <p id="finalScore"></p>
+            <p id="finalProgress"></p>
+
+            <div class="actions">
+                <button class="btn btn-primary" onclick="restartQuiz()">Try Again</button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
